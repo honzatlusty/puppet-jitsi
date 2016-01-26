@@ -1,0 +1,8 @@
+## File managed with puppet ###
+
+[Service]
+<% conf = @jicofo_configuration -%>
+<% conf.map do |key,value| -%>
+Environment=<%= key -%>=<%= value %>
+<% end %>
+

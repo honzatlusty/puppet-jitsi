@@ -1,0 +1,8 @@
+## File managed with puppet ###
+
+[Service]
+<% conf = @jitsi_videobridge_configuration -%>
+<% conf.map do |key,value| -%>
+Environment=<%= key -%>=<%= value %>
+<% end %>
+

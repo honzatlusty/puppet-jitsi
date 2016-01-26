@@ -1,0 +1,22 @@
+VirtualHost "<%= @jitsi_domain %>"
+    authentication = "anonymous"
+    ssl = {
+        key = "<%= @ssl_key %>";
+        certificate = "<%= @ssl_cert %>";
+    }
+    modules_enabled = {
+        "bosh";
+        "pubsub";
+    }
+
+VirtualHost "auth.<%= @jitsi_domain %>"
+    authentication = "internal_plain"
+
+admins = { "focus@auth.<%= @jitsi_domain %>" }
+
+Component "conference.<%= @jitsi_domain %>" "muc"
+Component "jitsi-videobridge.<%= @jitsi_domain %>"
+    component_secret = "<%= @videobridge_password %>"
+Component "focus.<%= @jitsi_domain %>"
+    component_secret = "<%= @jicofo_password %>"
+
