@@ -10,7 +10,7 @@ class jitsi::config::jicofo (
 
   file { '/etc/systemd/system/jicofo.service.d/jicofo.conf':
     ensure  => present,
-    content => template('profile_inuits/jitsi/jicofo.conf.erb'),
+    content => template('jitsi/jicofo.conf.erb'),
     notify  => [ Exec['jitsi-systemctl-daemon-reload'], Service['jicofo'] ],
   }
 

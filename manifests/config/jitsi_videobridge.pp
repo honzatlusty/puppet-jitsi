@@ -13,7 +13,7 @@ class jitsi::config::jitsi_videobridge (
 
   file { '/root/.sip-communicator/sip-communicator.properties':
     ensure  => present,
-    content => template('profile_inuits/jitsi/sip-communicator.properties.erb'),
+    content => template('jitsi/sip-communicator.properties.erb'),
     notify  => [ Exec['jitsi-systemctl-daemon-reload'], Service['jitsi-videobridge'] ],
   }
 
@@ -23,7 +23,7 @@ class jitsi::config::jitsi_videobridge (
 
   file { '/etc/systemd/system/jitsi-videobridge.service.d/jitsi-videobridge.conf':
     ensure  => present,
-    content => template('profile_inuits/jitsi/jitsi-videobridge.conf.erb'),
+    content => template('jitsi/jitsi-videobridge.conf.erb'),
     notify  => [ Exec['jitsi-systemctl-daemon-reload'], Service['jitsi-videobridge'] ],
   }
 

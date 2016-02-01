@@ -12,7 +12,7 @@ class jitsi (
 
   class {'jitsi::install':}
   ->
-  class {'jitsi:config':
+  class {'jitsi::config':
     bosh                            => $bosh,
     jicofo_configuration            => $jicofo_configuration,
     jitsi_vhost_server_name         => $jitsi_vhost_server_name,
