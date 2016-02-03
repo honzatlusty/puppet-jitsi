@@ -3,6 +3,6 @@
 [Service]
 <% conf = @jicofo_configuration -%>
 <% conf.map do |key,value| -%>
-Environment=<%= key -%>=<%= value %>
+Environment=<%= key.upcase -%>=<%= value %>
 <% end %>
 
