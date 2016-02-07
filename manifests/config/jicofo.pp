@@ -14,6 +14,8 @@ class jitsi::config::jicofo (
     notify  => [ Exec['jitsi-systemctl-daemon-reload'], Service['jicofo'] ],
   }
 
+   Exec['jitsi-systemctl-daemon-reload'] ~>  Service['jicofo']
+
   file { '/usr/share/jicofo/lib/logging.properties':
     ensure  => present,
     require => Package['jicofo'],

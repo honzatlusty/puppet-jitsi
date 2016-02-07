@@ -17,6 +17,8 @@ class jitsi::config::jitsi_videobridge (
     notify  => [ Exec['jitsi-systemctl-daemon-reload'], Service['jitsi-videobridge'] ],
   }
 
+  Exec['jitsi-systemctl-daemon-reload'] ~>  Service['jitsi-videobridge']
+
   file { '/etc/systemd/system/jitsi-videobridge.service.d':
     ensure => 'directory',
   }
