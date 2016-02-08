@@ -3,9 +3,9 @@
 class jitsi (
   $bosh,
   $jicofo_configuration,
-  $jicofo_service_ensure            = $jitsi::params::jicofo_service_ensure,
   $jitsi_vhost_server_name,
   $jitsi_videobridge_configuration,
+  $jicofo_service_ensure            = $jitsi::params::jicofo_service_ensure,
   $jitsi_videobridge_service_ensure = $jitsi::params::jitsi_videobridge_service_ensure,
   $nat_harvester_local_address      = $jitsi::params::nat_harvester_local_address,
   $nat_harvester_public_address     = $jitsi::params::nat_harvester_local_address,
