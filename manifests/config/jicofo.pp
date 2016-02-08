@@ -30,7 +30,4 @@ class jitsi::config::jicofo (
     notify => Service['jicofo'],
   }
 
-  service { 'jicofo':
-    ensure => 'running',
-  }
 }

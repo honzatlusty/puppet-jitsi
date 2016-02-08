@@ -43,7 +43,4 @@ class jitsi::config::jitsi_videobridge (
     notify => Service['jitsi-videobridge'],
   }
 
-  service { 'jitsi-videobridge':
-    ensure => 'running',
-  }
 }
