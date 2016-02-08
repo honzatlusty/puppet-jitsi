@@ -3,14 +3,14 @@
 class jitsi (
   $bosh,
   $jicofo_configuration,
-  $jicofo_service_ensure            = 'running', 
+  $jicofo_service_ensure            = $jitsi::params::jicofo_service_ensure,
   $jitsi_vhost_server_name,
   $jitsi_videobridge_configuration,
-  $jitsi_videobridge_service_ensure = 'running',
-  $nat_harvester_local_address      = undef,
-  $nat_harvester_public_address     = undef,
-  $tcp_harvester_port               = undef,
-) {
+  $jitsi_videobridge_service_ensure = $jitsi::params::jitsi_videobridge_service_ensure,
+  $nat_harvester_local_address      = $jitsi::params::nat_harvester_local_address,
+  $nat_harvester_public_address     = $jitsi::params::nat_harvester_local_address,
+  $tcp_harvester_port               = $jitsi::params::nat_harvester_public_address,
+) inherits jitsi::params  {
 
   class {'jitsi::install':}
   ->
