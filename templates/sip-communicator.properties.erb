@@ -2,3 +2,12 @@ org.jitsi.impl.neomedia.transform.srtp.SRTPCryptoContext.checkReplay=false
 org.jitsi.videobridge.NAT_HARVESTER_LOCAL_ADDRESS=<%= @nat_harvester_local_address %>
 org.jitsi.videobridge.NAT_HARVESTER_PUBLIC_ADDRESS=<%= @nat_harvester_public_address %>
 org.jitsi.videobridge.TCP_HARVESTER_PORT=<%= @tcp_harvester_port %>
+<%- if @enable_media_recording %>
+org.jitsi.videobridge.ENABLE_MEDIA_RECORDING=<%= @enable_media_recording %>
+<%- end %>
+<%- if @media_recording_path %>
+org.jitsi.videobridge.MEDIA_RECORDING_PATH=<%= @media_recording_path  %>
+<%- end %>
+<%- if @media_recording_token %>
+org.jitsi.videobridge.MEDIA_RECORDING_TOKEN=<%= if @media_recording_token %>
+<%- end %>

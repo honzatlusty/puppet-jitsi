@@ -55,7 +55,11 @@ var config = {
     channelLastN: -1, // The default value of the channel attribute last-n.
     adaptiveLastN: false,
     adaptiveSimulcast: false,
+    <%- if @enable_media_recording %>
+    enableRecording: <%= @enable_media_recording %>,
+    <%- else %>
     enableRecording: false,
+    <%- end %>
     enableWelcomePage: true,
     enableSimulcast: false, // blocks FF support
     logStats: false, // Enable logging of PeerConnection stats via the focus
