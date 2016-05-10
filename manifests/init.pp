@@ -10,6 +10,9 @@ class jitsi (
   $nat_harvester_local_address      = $jitsi::params::nat_harvester_local_address,
   $nat_harvester_public_address     = $jitsi::params::nat_harvester_local_address,
   $tcp_harvester_port               = $jitsi::params::nat_harvester_public_address,
+  $enable_media_recording           = $jitsi::params::enable_media_recording,
+  $media_recording_path             = $jitsi::params::media_recording_path,
+  $media_recording_token            = $jitsi::params::media_recording_token,
 ) inherits jitsi::params  {
 
   class {'jitsi::install':}
@@ -22,6 +25,9 @@ class jitsi (
     nat_harvester_local_address     => $nat_harvester_local_address,
     nat_harvester_public_address    => $nat_harvester_public_address,
     tcp_harvester_port              => $tcp_harvester_port,
+    enable_media_recording          => $enable_media_recording,
+    media_recording_path            => $media_recording_path,
+    media_recording_token           => $media_recording_token,
   }
   ->
   class {'jitsi::service':
