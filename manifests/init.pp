@@ -15,7 +15,9 @@ class jitsi (
   $media_recording_token            = $jitsi::params::media_recording_token,
 ) inherits jitsi::params  {
 
-  class {'jitsi::install':}
+  class {'jitsi::install':
+    media_recording_path => $media_recording_path,
+  }
   ->
   class {'jitsi::config':
     bosh                            => $bosh,
